@@ -3,11 +3,11 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "2"
+      --record=true
   generation: 2
   labels:
     run: webapp
   name: webapp
-  namespace: default
 spec:
   replicas: 1
   selector:
@@ -25,4 +25,3 @@ spec:
     spec:
       containers:
       - image: nginx:1.12
-        name: webapp
